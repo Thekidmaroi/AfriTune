@@ -55,12 +55,43 @@ The visualizations describe **one run**. They do not quantify variability across
 - **Training:** 3 epochs, learning rate 2e-5, batch size 4, gradient accumulation 4, weight decay 0.01, FP16 on Tesla T4.
 - **Checkpoint selection:** highest validation entity-level F1; test evaluated separately.
 
-## Documentation
+## Get started
 
-See [the preliminary scientific report](docs/scientific_report.md) for the methodology, results, error analysis, and limitations.
+Open [the public Fon NER notebook](AfriTune_Fon_NER_Public_English.ipynb) to inspect the full workflow. The notebook downloads a **pinned reference snapshot** of the Fon dataset and verifies upstream Git blob hashes. This pinned snapshot has not been established as the exact revision used in the original run.
+
+For a local copy of the reference dataset, the repository includes an optional downloader:
+
+```bash
+python scripts/download_fon.py --output-dir data/fon
+```
+
+The notebook currently uses its own verified network download and does not automatically load files downloaded by the standalone script. **No fresh GPU rerun has been performed as part of this documentation release.**
+
+## Repository guide
+
+| Resource | Description |
+|---|---|
+| [Public notebook](AfriTune_Fon_NER_Public_English.ipynb) | Fon NER preprocessing, fine-tuning, evaluation, and visualization workflow |
+| [Scientific report](docs/scientific_report.md) | Research methodology, results, and limitations |
+| [Reproducibility guide](docs/reproducibility.md) | Setup instructions and verification checklist |
+| [Notebook audit](docs/notebook_audit.md) | Static review of methodological and portability risks |
+| [Requirements](requirements.txt) | Provisional notebook installation constraints; **not** an exact environment lockfile |
+| [Dataset downloader](scripts/download_fon.py) | Fixed-reference Fon data download with integrity verification |
+| [Evaluation results](results/README.md) | Validation and test metrics and original figures |
+
+## Research limitations
+
+- Results are from **one training run**, without multi-seed uncertainty estimates.
+- The historical dataset revision has not been verified against the newly pinned reference snapshot.
+- The notebook's installation constraints differ from the versions recorded in the original experiment metadata.
+- Reproduction on a fresh GPU runtime remains **unverified**; readers should not interpret the published numbers as newly replicated results.
+
+## Citation
+
+If you use this repository, cite the project URL and the underlying MasakhaNER 2.0 dataset and XLM-RoBERTa model publications. A formal AfriTune paper citation and DOI have not yet been assigned.
 
 ## Release status
 
-**Initial documentation release.** The English Colab notebook and five original experimental figures are available in the repository. A dependency lockfile, verified dataset revision, and fresh-environment reproducibility test are still pending. The model weights (~1.05 GiB) and training checkpoints are not hosted in this repository. The absence of these assets means that end-to-end reproduction has **not yet been verified** from this repository.
+**Initial documentation release.** The English Colab notebook and five original experimental figures are available in the repository. An exact dependency lockfile, confirmation of the historical dataset revision, and a fresh-environment reproducibility test are still pending. A pinned reference snapshot and integrity checks are available. The model weights (~1.05 GiB) and training checkpoints are not hosted in this repository. The absence of these assets means that end-to-end reproduction has **not yet been verified** from this repository.
 
 This is a baseline from one experiment, not a benchmark ranking or claim of novelty. Dataset redistribution and licensing terms will be reviewed before any datasets or model weights are published.
