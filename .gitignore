@@ -15,3 +15,6 @@ wandb/
 data/
 datasets/
 .DS_Store
+afritune_environment.json
+*.log
+.pytest_cache/
