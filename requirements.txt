@@ -1,0 +1,16 @@
+# AfriTune notebook installation constraints (not a verified lockfile).
+# The experiment metadata reports transformers 5.18.0, whereas the
+# published notebook requests transformers >=4.55,<5.
+# Resolve this discrepancy and test a clean environment before claiming
+# exact reproduction of the reported scores.
+transformers>=4.55,<5
+datasets>=3,<5
+accelerate>=1,<2
+seqeval>=1.2.2,<2
+scikit-learn>=1.5,<2
+sentencepiece>=0.2,<1
+evaluate>=0.4,<1
+requests>=2.31,<3
+pandas>=2,<3
+matplotlib>=3.8,<4
+# PyTorch is provided by the Colab runtime; record its version separately.
