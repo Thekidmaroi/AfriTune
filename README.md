@@ -79,6 +79,18 @@ The notebook currently uses its own verified network download and does not autom
 | [Dataset downloader](scripts/download_fon.py) | Fixed-reference Fon data download with integrity verification |
 | [Evaluation results](results/README.md) | Validation and test metrics and original figures |
 
+## Community and project governance
+
+- [Contributing guide](CONTRIBUTING.md) — how to propose and review changes.
+- [Code of conduct](CODE_OF_CONDUCT.md) — expectations for respectful collaboration.
+- [Security policy](SECURITY.md) — how to report sensitive issues privately.
+- [Roadmap](docs/roadmap.md) — completed work and future research milestones.
+- [Changelog](CHANGELOG.md) — documentation milestones.
+- [Citation guidance](CITATION.md) — provisional repository citation (no DOI yet).
+- [Licensing status](docs/licensing.md) — **no repository license selected yet**; third-party rights require review.
+
+GitHub issue and pull-request templates are available for contributors.
+
 ## Research limitations
 
 - Results are from **one training run**, without multi-seed uncertainty estimates.
@@ -88,10 +100,10 @@ The notebook currently uses its own verified network download and does not autom
 
 ## Citation
 
-If you use this repository, cite the project URL and the underlying MasakhaNER 2.0 dataset and XLM-RoBERTa model publications. A formal AfriTune paper citation and DOI have not yet been assigned.
+See [citation guidance](CITATION.md) for a provisional repository reference. Also cite the upstream dataset and model publications. A formal AfriTune paper citation and DOI have not yet been assigned.
 
 ## Release status
 
 **Initial documentation release.** The English Colab notebook and five original experimental figures are available in the repository. An exact dependency lockfile, confirmation of the historical dataset revision, and a fresh-environment reproducibility test are still pending. A pinned reference snapshot and integrity checks are available. The model weights (~1.05 GiB) and training checkpoints are not hosted in this repository. The absence of these assets means that end-to-end reproduction has **not yet been verified** from this repository.
 
-This is a baseline from one experiment, not a benchmark ranking or claim of novelty. Dataset redistribution and licensing terms will be reviewed before any datasets or model weights are published.
+This is a baseline from one experiment, not a benchmark ranking or claim of novelty. **No license has been selected for original AfriTune materials.** Dataset and model redistribution and licensing terms require review before any assets are published.
